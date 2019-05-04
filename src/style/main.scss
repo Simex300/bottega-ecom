@@ -25,5 +25,8 @@ body {
 
 @import 'layout';
 @import 'header';
+
 @import 'auth/signin';
 @import 'auth/signup';
+
+@import 'common/page-title';
