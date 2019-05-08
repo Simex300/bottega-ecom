@@ -10,18 +10,15 @@ import history from '../../history';
 class SignupForm extends Component {
     render() {
         const { className, handleSubmit } = this.props;
-        const links = [
+        const info = [
             {
-                title: 'Not registered? Create account here',
-                onClick: () => history.pushState('/signup')
+                title: 'At least 6 characters'
             },
             {
-                title: 'Forgot account email?',
-                onClick: () => console.log("Forgot email")
+                title: 'At least one number'
             },
             {
-                title: 'Forgot password?',
-                onClick: () => console.log("Forgot password")
+                title: 'At least one symbol'
             }
         ]
         return(
@@ -29,11 +26,11 @@ class SignupForm extends Component {
                 <Field className='signup-form__name' name='name' title='Name' placeholder='Name' type='text' component={FormInput}/>
                 <Field className='signup-form__email' name='email' title='Email' placeholder='Email' type='email' component={FormInput}/>
                 <Field className='signup-form__password' name='password' title='Password' placeholder='Password' type='password' component={FormInput}/>
-                <Field className='signup-form__confirm-password' name='confirm' title='Confirm Password' placeholder='Confirm Password' type='password' component={FormInput}/>
+                <Field className='signup-form__confirm' name='confirm' title='Confirm Password' placeholder='Confirm Password' type='password' component={FormInput}/>
                 <div className='signup-form__line'></div>
-                <Field className='signup-form__login-btn' onClick={() => console.log('Submitting Login!')} name='login' title='Login' type='submit' component={FormButton}/>
-                <Field className='signup-form__login-btn' onClick={() => console.log('Back')} name='back' title='Back' type='button' short={true} component={FormButton}/>
-                <Details className='signup-form__details' title='Quick Links' links={links} />
+                <Field className='signup-form__create' onClick={() => history.push('/account')} name='login' title='Create Account' type='submit' component={FormButton}/>
+                <Field className='signup-form__back' onClick={() => history.push('/')} name='back' title='Back' type='button' short={true} component={FormButton}/>
+                <Details className='signup-form__details' title='Password Requirements' infos={info} />
             </form>
         )
     }
