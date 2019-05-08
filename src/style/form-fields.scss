@@ -2,6 +2,10 @@
     display: grid;
     grid-gap: 6.5px;
     
+    & > * {
+        padding-left: 20px;
+    }
+
     &__label {
         color: $gray;
         font-size: 14px;
@@ -13,6 +17,9 @@
         border-radius: 20px;
         color: $dark-gray;
         font-size: 18px;
+
+        height: 39px;
+        width: 426px;
     }
 }
 
