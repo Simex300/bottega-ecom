@@ -20,11 +20,13 @@ class Account extends Component {
         
         this.props.setNavbarLinks([
             {
+                _id: 0,
                 title: 'Account Information',
                 active: true,
                 component: <AccountInfomration/>
             },
             {
+                _id: 1,
                 title: 'Purchase History',
                 active: false,
                 component: <PurchaseHistory/>
