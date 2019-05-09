@@ -11,10 +11,14 @@ class Account extends Component {
     componentDidMount() {
         this.props.setHeaderLinks([
             {
-                title: 'Shop'
+                _id: 0,
+                title: 'Shop',
+                path: '/shop'
             },
             {
-                title: 'Logout'
+                _id: 1,
+                title: 'Logout',
+                path: '/'
             }
         ]);
         
