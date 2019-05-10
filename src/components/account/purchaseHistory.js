@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import PageTitle from '../common/pageTitle';
 
 class PurchaseHistory extends Component {
     render() {
         return(
             <div className='purchase-history'>
-                Purchase history
+                <PageTitle className='purchase-history__page-title' title='Purchase History' />
             </div>
         )
     }
