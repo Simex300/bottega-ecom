@@ -8,18 +8,102 @@ export function fetchUserPurchases() {
         payload: [
             {
                 _id: 0,
-                title: "Purchase 1",
-                amount: 8.2
+                total: 8.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
             },
             {
                 _id: 1,
-                title: "Purchase 2",
-                amount: 8.2
+                total: 5.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
             },
             {
                 _id: 2,
-                title: "Purchase 3",
-                amount: 8.2
+                total: 8.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
+            },
+            {
+                _id: 3,
+                total: 8.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
+            },
+            {
+                _id: 4,
+                total: 8.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
+            },
+            {
+                _id: 5,
+                total: 8.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
+            },
+            {
+                _id: 6,
+                total: 8.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
+            },
+            {
+                _id: 7,
+                total: 8.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
+            },
+            {
+                _id: 8,
+                total: 8.20,
+                orderNumber: 'ASGF5618S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Adonis Almonte',
+                    shippingAddress: '5481 West State Street'
+                }
             },
         ]
     })
