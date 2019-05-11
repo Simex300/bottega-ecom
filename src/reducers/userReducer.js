@@ -4,7 +4,17 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = { 
-    purchaseDetail: {},
+    purchaseDetail: {
+        _id: -1,
+        total: 0,
+        orderNumber: '',
+        orderDate: new Date(),
+        creditCard: '',
+        user: {
+            name: '',
+            shippingAddress: ''
+        }
+    },
     purchases: []
 }
 
