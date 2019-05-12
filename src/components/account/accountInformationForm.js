@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 import { reduxForm, Field } from 'redux-form';
 
-import { FormInput, FormButton } from '../formFields';
+import { FormInput, FormButton, LongGrayButton } from '../formFields';
 
 import history from '../../history';
 
 class AccountInformationForm extends Component {
     render() {
         const { className, handleSubmit } = this.props;
-        return(
+        return (
             <form onSubmit={handleSubmit} className={`${className} account-information-form`}>
                 <Field className='account-information-form__email' name='email' title='Email' placeholder='Email' type='email' component={FormInput}/>
                 <Field className='account-information-form__name' name='name' title='Name' placeholder='Name' type='text' component={FormInput}/>
@@ -18,10 +18,9 @@ class AccountInformationForm extends Component {
 
                 <Field className='account-information-form__state' name='state' title='State' placeholder='State' type='text' component={FormInput}/>
                 <Field className='account-information-form__zipcode' name='zipcode' title='Zipcode' placeholder='Zipcode' type='text' component={FormInput}/>
-
                 
-                {/* <Field className='account-information-form__password' name='password' title='Password' placeholder='Password' type='password' component={FormInput}/>
-                <div className='account-information-form__line'></div>
+                <Field className='account-information-form__change-password' onClick={() => console.log("Show more form")} name='change-password' labelTitle='Password' title='Change Password' type='button' component={LongGrayButton}/>
+                {/* <div className='account-information-form__line'></div>
                 <Field className='account-information-form__login-btn' onClick={() => history.push('/account')} name='login' title='Login' type='submit' component={FormButton}/> */}
             </form>
         )
