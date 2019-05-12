@@ -102,17 +102,6 @@ export function fetchUserPurchases() {
                     shippingAddress: '5481 West State Street'
                 }
             },
-            {
-                _id: 8,
-                total: 8.20,
-                orderNumber: 'ASGF5618S',
-                orderDate: new Date(),
-                creditCard: '-0000',
-                user: {
-                    name: 'Adonis Almonte',
-                    shippingAddress: '5481 West State Street'
-                }
-            },
         ]
     })
 }

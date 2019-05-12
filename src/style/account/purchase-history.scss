@@ -23,6 +23,7 @@
 }
 
 .purchase-detail {
+    width: 600px;
     display: grid;
     grid-template-columns: [s] 1fr [m] 1fr [e];
     grid-template-rows: [s] 1fr [sm] 1fr [m-s] 25px [m-e] 1fr [me] 1fr [e];
