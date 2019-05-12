@@ -33,12 +33,14 @@ class AccountInformationForm extends Component {
                         [
                             <Field key={0} className='account-information-form__current-password' name='current-password' title='Current Password' placeholder='Current Password' type='password' component={FormInput}/>,
                             <Field key={1} className='account-information-form__new-password' name='new-password' title='New Password' placeholder='New Password' type='password' component={FormInput}/>,
-                            <Field key={2} className='account-information-form__confirm-password' name='confirm-password' title='Confirm Password' placeholder='Confirm Password' type='password' component={FormInput}/>
+                            <Field key={2} className='account-information-form__confirm-password' name='confirm-password' title='Confirm Password' placeholder='Confirm Password' type='password' component={FormInput}/>,
+                            <Field key={4} className='account-information-form__update' onClick={() => console.log("Updating")} name='update' title='Update Information' type='button' component={FormButton}/>,
+                            <Field key={5} className='account-information-form__cancel' onClick={() => this.setState({ showPassword: false })} name='cancel' title='Cancel' type='button' short={true} component={FormButton}/>
                         ]
                     :
                         <Field className='account-information-form__change-password' onClick={() => this.setState({ showPassword: true })} name='change-password' labelTitle='Password' title='Change Password' type='button' component={LongGrayButton}/>
                 }
-
+                <div key={3} className='account-information-form__line'></div>
                 {/* <div className='account-information-form__line'></div> */}
             </form>
         )
