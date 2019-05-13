@@ -12,8 +12,9 @@ class Shop extends Component {
                 path: '/signin'
             }
         ]);
-        
+
         this.props.fetchShopCategories();
+        this.props.fetchShopProducts();
         
         // this.props.setNavbarLinks([
         //     {
