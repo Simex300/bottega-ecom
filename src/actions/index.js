@@ -9,6 +9,10 @@ import {
     setPurchaseDetail
 } from './user';
 
+import { 
+    fetchShopCategories
+} from './shop'
+
 export {
     // Header
     setHeaderLinks,
@@ -17,5 +21,8 @@ export {
 
     // User
     fetchUserPurchases,
-    setPurchaseDetail
+    setPurchaseDetail,
+
+    // Shop
+    fetchShopCategories
 }
