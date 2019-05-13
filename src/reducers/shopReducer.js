@@ -5,6 +5,7 @@ import {
 const INITIAL_STATE = {
     categories: [],
     selectedCategoryId: 0,
+    productsSelected: []
 }
 
 export default function (state = INITIAL_STATE, action){
