@@ -8,7 +8,7 @@ const INITIAL_STATE = {
     categories: [],
     products: [],
     selectedCategoryId: 0,
-    productsSelected: []
+    filteredProducts: []
 }
 
 export default function (state = INITIAL_STATE, action){
@@ -26,9 +26,15 @@ export default function (state = INITIAL_STATE, action){
             }
         
         case FILTER_PRODUCTS_WITH_CATEGORY_ID:
+            var filteredProducts = [];
+            state.products.map(product => {
+                if(product.belongsTo.includes(action.payload)){
+                    filteredProducts.push(product);
+                }
+            })
             return {
                 ...state,
-                selectedCategoryId: action.payload
+                filteredProducts
             }
             
         default:

@@ -15,21 +15,6 @@ class Shop extends Component {
 
         this.props.fetchShopCategories();
         this.props.fetchShopProducts();
-        
-        // this.props.setNavbarLinks([
-        //     {
-        //         _id: 0,
-        //         title: 'Account Information',
-        //         active: false,
-        //         component: <AccountInfomration/>
-        //     },
-        //     {
-        //         _id: 1,
-        //         title: 'Purchase History',
-        //         active: true,
-        //         component: <PurchaseHistory/>
-        //     }
-        // ]);
     }
 
     componentDidUpdate(nextProps) {
@@ -41,7 +26,22 @@ class Shop extends Component {
     render() {
         return(
             <div className='shop'>
-                Shop
+                <div className='shpo__products'>
+                    {
+                        this.props.filteredProducts.map(product => {
+                            return (
+                                <div key={product._id} className='shop-product'>
+                                    <div className='shop-product__title'>
+                                        {product.title}
+                                    </div>
+                                    <div className='shop-product__description'>
+                                        {product.description}
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     }
@@ -49,8 +49,8 @@ class Shop extends Component {
 
 function mapStateToProps(state) {
     const { headerLinks, navbarLinks } = state.headerNavbar;
-    const { categories } = state.shop;
-    return { headerLinks, navbarLinks, categories };
+    const { categories, products, filteredProducts } = state.shop;
+    return { headerLinks, navbarLinks, categories, products, filteredProducts };
 }
 
 Shop = connect(mapStateToProps, actions)(Shop);
