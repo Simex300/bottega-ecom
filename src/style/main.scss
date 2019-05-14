@@ -33,9 +33,12 @@ body {
 
 @import 'common/page-title';
 @import 'common/details';
+@import 'common/quantity';
+@import 'common/green-price-tag';
 
 @import 'account/account';
 @import 'account/account-information';
 @import 'account/purchase-history';
 
 @import 'shop/shop';
+@import 'shop/shop-search-bar';
