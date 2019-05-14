@@ -32,6 +32,12 @@ class Shop extends Component {
         // ]);
     }
 
+    componentDidUpdate(nextProps) {
+        if(this.props != nextProps) {
+            this.props.setNavbarLinks(nextProps.categories, (_id) => this.props.filterProductWithCategoryId(_id));
+        }
+    }
+
     render() {
         return(
             <div className='shop'>
@@ -43,7 +49,8 @@ class Shop extends Component {
 
 function mapStateToProps(state) {
     const { headerLinks, navbarLinks } = state.headerNavbar;
-    return { headerLinks, navbarLinks };
+    const { categories } = state.shop;
+    return { headerLinks, navbarLinks, categories };
 }
 
 Shop = connect(mapStateToProps, actions)(Shop);

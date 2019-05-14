@@ -1,12 +1,20 @@
 import { 
     SET_SHOP_CATEGORIES,
     SET_SHOP_PRODUCTS,
+    FILTER_PRODUCTS_WITH_CATEGORY_ID,
     SET_NAVBAR_LINKS
 } from './types';
 
+export function filterProductWithCategoryId(_id) {
+    return ({
+        type: FILTER_PRODUCTS_WITH_CATEGORY_ID,
+        payload: _id
+    })
+}
+
 export function fetchShopCategories() {
     return ({
-        type: SET_NAVBAR_LINKS,
+        type: SET_SHOP_CATEGORIES,
         payload: [
             {
                 _id: 0,

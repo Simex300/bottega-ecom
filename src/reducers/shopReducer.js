@@ -1,5 +1,6 @@
 import {
     SET_SHOP_CATEGORIES,
+    FILTER_PRODUCTS_WITH_CATEGORY_ID,
     SET_SHOP_PRODUCTS
 } from '../actions/types';
 
@@ -23,7 +24,13 @@ export default function (state = INITIAL_STATE, action){
                 ...state,
                 products: action.payload
             }
-    
+        
+        case FILTER_PRODUCTS_WITH_CATEGORY_ID:
+            return {
+                ...state,
+                selectedCategoryId: action.payload
+            }
+            
         default:
             return state;
     }

@@ -19,7 +19,8 @@ export default function (state = INITIAL_STATE, action) {
         case SET_NAVBAR_LINKS:
             return {
                 ...state,
-                navbarLinks: action.payload
+                navbarLinks: action.payload,
+                navbarLinkOnClick: action.onClick
             }
         case CHANGE_NAVBAR_ACTIVE:
             const navbarLinks = state.navbarLinks.map(link => {
