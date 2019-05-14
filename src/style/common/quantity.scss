@@ -1,13 +1,47 @@
 .quantity {
-    &__count {
+    display: grid;
+    grid-template-rows: [s] 21px [m] 21px [e];
+    grid-template-columns: [s] 65px [m] 25px [e];
 
+    &__count, &__plus, &__minus {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        border: 1px solid #E6E6E6;
+    }
+
+    &__count {
+        grid-row: s/e;
+        grid-column: s/m;
+
+        height: 42px;
+        width: 65px;
+        border-radius: 3px 0 0 3px;
+        font-size: 23px;
+        color: #333;
+        
     }
 
     &__plus {
-
+        grid-row: s/m;
+        grid-column: m/e;
+        
+        border-left: none;
+        border-bottom: none;
+        border-radius: 0 3px 0 0;
+    }
+    
+    &__minus {
+        grid-row: m/e;
+        grid-column: m/e;
+        
+        border-left: none;
+        border-radius: 0 0 3px 0;
     }
 
-    &__minus {
-        
+    &__plus, &__minus {
+        height: 21px;
+        width: 29px;
     }
 }
