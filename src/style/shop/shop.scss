@@ -1,4 +1,28 @@
 .shop {
     grid-row: content-s/content-e;
     grid-column: content-s/content-e;
+    
+    display: grid;
+    grid-template-rows: 37px [search-s] 38px [search-e] 57px [products-s] 1fr [products-e];
+    grid-template-columns: [s] 1fr [e];
+    // grid-gap: 57px;
+    
+    &__search-bar {
+        grid-row: search-s/search-e;
+        grid-column: s/e;
+    }
+    
+    &__products {
+        grid-row: products-s/products-e;
+        grid-column: s/e;
+        display: grid;
+
+        justify-self: center;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-row-gap: 40px;
+        grid-column-gap: 25px;
+        justify-content: center;
+
+        max-width: 1035px;
+    }
 }
