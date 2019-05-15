@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CartProduct from './cartProduct';
 
@@ -45,14 +48,27 @@ function CartFooter({className, products}){
 }
 
 class ShopCart extends Component {
+    componentDidMount(){
+        this.props.fetchCartProducts();
+    }
+
     render() {
         return (
             <div className='shop-cart'>
                 <CartButton className='shop-cart__toggle' icon='times'/>
-                <CartContent className='shop-cart__content' products={[1,2,3]}/>
+                <CartContent className='shop-cart__content' products={this.props.cartProducts}/>
             </div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    const { cartProducts } = state.user;
+    return {
+        cartProducts
+    }
+}
+
+ShopCart = connect(mapStateToProps, actions)(ShopCart);
 
 export default ShopCart;
