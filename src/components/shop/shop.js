@@ -5,6 +5,7 @@ import * as actions from '../../actions';
 
 import ShopSearchBar from './shopSearchBar';
 import ShopProduct from './shopProduct';
+import ShopCart from './shopCart';
 
 class Shop extends Component {
     componentDidMount() {
@@ -44,6 +45,7 @@ class Shop extends Component {
                         })
                     }
                 </div>
+                <ShopCart className="shop__cart" />
             </div>
         )
     }
