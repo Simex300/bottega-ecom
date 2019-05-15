@@ -36,5 +36,48 @@
 }
 
 .cart-content {
+    &__title {
+        font-weight: 600;
+        font-size: 30px;
+        font-family: 'Titillium Web';
+        color: #E6E6E6;
+    }
 
+    &__products {
+        display: grid;
+    }
+
+    &__footer {
+        display: grid;
+    }
+}
+
+.cart-footer {
+    &__checkout {
+        height: 38px;
+        width: 183px;
+        border-radius: 20px;
+        background-color: $light-green;
+
+        color: white;
+        font-size: 16px;
+
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        transition: all .3s ease;
+
+        &:hover {
+            transform: scale(0.97);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
 }
