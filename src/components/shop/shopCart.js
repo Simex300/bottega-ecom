@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CartProduct from './cartProduct';
 
 function CartButton({className, icon}) {
     return (
@@ -11,13 +13,14 @@ function CartButton({className, icon}) {
 
 function CartContent({className, products}) {
     let count = products.length;
+    let productJSX = products.map((product, index) => <CartProduct key={index} />);
     return (
         <div className={`${className} cart-content`}>
             <div className='cart-content__title'>
                 Cart ({count})
             </div>
             <div className='cart-content__products'>
-            
+                {productJSX}
             </div>
             <CartFooter className='cart-content__footer' products={products}/>
         </div>
