@@ -23,6 +23,18 @@
         grid-column-gap: 25px;
         justify-content: center;
 
-        max-width: 1035px;
+        // max-width: 1035px;
+    }
+
+    &__cart {
+        // grid-row: 1/-1;
+        // grid-column: 1/-1;
+
+        // align-self: start;
+        // justify-self: end;
+        
+        position: absolute;
+        top: 100px + 37px;
+        right: 0px;
     }
 }

@@ -4,6 +4,11 @@ import Quantity from '../common/quantity';
 import GreenPriceTag from '../common/greenPriceTag';
 
 class ShopProduct extends Component {
+
+    handleAddToCart = () => {
+
+    }
+
     render() {
         const { title, description, price } = this.props;
         return (

@@ -6,9 +6,9 @@ import * as actions from '../../actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CartProduct from './cartProduct';
 
-function CartButton({className, icon}) {
+function CartButton({className, icon, onClick}) {
     return (
-        <div className={`${className} cart-button`}>
+        <div onClick={onClick} className={`${className} cart-button`}>
             <FontAwesomeIcon icon={icon}/>
         </div>
     )
@@ -48,15 +48,36 @@ function CartFooter({className, products}){
 }
 
 class ShopCart extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            cartHidden: true
+        }
+    }
+
     componentDidMount(){
         this.props.fetchCartProducts();
     }
 
+    toggleCartContent = () => {
+        if(document.querySelector('.shop-cart__content').classList.contains('cart-hidden')){
+            this.setState({cartHidden: false});
+            document.querySelector('.shop-cart__content').classList.remove('cart-hidden');
+        }
+        else {
+            this.setState({cartHidden: true});
+            document.querySelector('.shop-cart__content').classList.add('cart-hidden');
+        }
+    }
+
     render() {
+        const { className } = this.props;
+        let icon = this.state.cartHidden ? 'shopping-cart' : 'times';
         return (
-            <div className='shop-cart'>
-                <CartButton className='shop-cart__toggle' icon='times'/>
-                <CartContent className='shop-cart__content' products={this.props.cartProducts}/>
+            <div className={`${className} shop-cart`}>
+                <CartButton onClick={this.toggleCartContent} className='shop-cart__toggle' icon={icon}/>
+                <CartContent className='shop-cart__content cart-hidden' products={this.props.cartProducts}/>
             </div>
         )
     }
