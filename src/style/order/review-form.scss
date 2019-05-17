@@ -3,6 +3,13 @@
     &__products {
         grid-column: 1/-1;
         grid-row: products-s/products-e;
+        overflow-y: scroll;
+
+        padding: 15px 0;
+
+        display: grid;
+        grid-template-rows: repeat(auto-fit, 80px);
+        grid-row-gap: 12px;
     }
     
     &__line {
