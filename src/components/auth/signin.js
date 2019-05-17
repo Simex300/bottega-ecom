@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import SigninForm from './signinForm';
 import PageTitle from '../common/pageTitle';
 
+import history from '../../history';
+
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
@@ -13,7 +15,8 @@ class Signin extends Component {
     }
 
     onSubmit = (fields) => {
-        console.log("Fields:", fields);
+        this.props.signIn(fields);
+        history.push('/account');
     }
 
     render() {
