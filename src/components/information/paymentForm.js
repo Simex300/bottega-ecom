@@ -6,6 +6,7 @@ import { FormInput, FormButton } from '../formFields';
 
 import history from '../../history';
 import OrderSummary from './orderSummary';
+import { UnderlinedTitle } from './informationDetail';
 
 class PaymentForm extends Component {
     render() {
@@ -20,6 +21,11 @@ class PaymentForm extends Component {
                 <Field className='payment-form__confirm' onClick={() => history.push('/shop')} name='confirm' title='Proceed Payment' type='submit' component={FormButton}/>
                 <Field className='payment-form__back' onClick={() => history.push('/information/shipping')} name='back' title='Back' type='button' short={true} component={FormButton}/>
                 <OrderSummary className='payment-form__details'/>
+                <div className='payment-form__shipping-info shipping-info'>
+                    <UnderlinedTitle className='shipping-info__title' title='Shipping To' />
+                    <div className='shipping-info__name small-text'>Adonis Almonte</div>
+                    <div className='shipping-info__address small-text'>1234 Address goes here</div>
+                </div>
             </form>
         )
     }

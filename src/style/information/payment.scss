@@ -61,4 +61,42 @@
         justify-self: end;
         align-self: start;
     }
+    
+    &__shipping-info {
+        grid-row: 1/-1;
+        grid-column: 4/5;
+        justify-self: end;
+        align-self: start;
+        transform: translateY(180px);
+    }
+}
+
+.small-text {
+    font-size: 14px;
+}
+
+.shipping-info {
+    width: 240px;
+    height: 150px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 24px 24px;
+    grid-row-gap: 5px;
+
+    & > * {
+        grid-column: 1/-1;
+    }
+
+    &__title {
+        
+    }
+
+    &__name {
+
+    }
+
+    &__address {
+
+    }
 }
