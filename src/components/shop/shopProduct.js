@@ -10,8 +10,8 @@ class ShopProduct extends Component {
 
     handleAddToCart = () => {
         console.log("Inside!");
-        const { _id, title, description, price, belongsTo } = this.props;
-        this.props.addCartProduct({ _id, title, description, price, belongsTo }, 1);
+        const { _id, title, description, price, belongsTo, imageUrl } = this.props;
+        this.props.addCartProduct({ _id, title, description, price, belongsTo, imageUrl }, 1);
     }
 
     render() {
