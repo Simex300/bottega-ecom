@@ -16,6 +16,7 @@ import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 import Account from './components/account/account';
 import Shop from './components/shop/shop';
+import Review from './components/order/review';
 
 function main() {
   ReactDOM.render(
@@ -30,6 +31,7 @@ function main() {
             <Route path='/account' component={Account} />
             
             <Route path='/shop' component={Shop} />
+            <Route path='/order/review' component={Review} />
           </Switch>
         </Layout>
       </Router>
