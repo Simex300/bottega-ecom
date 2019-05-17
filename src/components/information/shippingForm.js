@@ -24,7 +24,7 @@ class ShippingForm extends Component {
         return(
             <form onSubmit={handleSubmit} className={`${className} shipping-form`}>
                 <Field className='shipping-form__name' name='name' title='Name' placeholder='Name' type='text' component={FormInput}/>
-                <Field className='shipping-form__street-address' name='street-address' title='Street Address' placeholder='Street Address' type='text' component={FormInput}/>
+                <Field className='shipping-form__address' name='street-address' title='Street Address' placeholder='Street Address' type='text' component={FormInput}/>
                 <Field className='shipping-form__city' name='city' title='City' placeholder='City' type='text' component={FormInput}/>
 
                 <Field className='shipping-form__state' name='state' title='State' placeholder='State' type='text' component={FormInput}/>

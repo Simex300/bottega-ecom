@@ -1,39 +1,67 @@
 .shipping {
-    &__form {
+    grid-row: content-s/content-e;
+    grid-column: content-s/content-e;
 
+    &__form {
+        display: grid;
+        grid-template-rows: [name-s] 64px [name-e] 35px [address-s] 64px [address-e  city-s] 64px [city-e zipcode-s state-s] 64px [zipcode-e state-e] minmax(20px, 81px) [line-s] 26px [line-e buttons-s] 38px [buttons-e];
+        grid-template-columns: [back-s] 137px [back-e] 40px [confirm-s] 1fr [confirm-e] 1fr;
+        grid-row-gap: 15px;
     }
 }
 
 .shipping-form {
+    & > * {
+        grid-column: 1/-1;
+    }
     &__name {
-
+        grid-row: name-s/name-e;
     }
-
+    
     &__address {
-
+        grid-row: address-s/address-e;
     }
-
+    
     &__city {
-
+        grid-row: city-s/city-e;
     }
-
+    
     &__state {
-
+        grid-row: state-s/state-e;
+        input {
+            width: 200px;
+        }
     }
-
+    
     &__zipcode {
+        grid-row: zipcode-s/zipcode-e;
+        transform: translateX(200px + 26px);
 
+        input {
+            width: 200px;
+        }
     }
-
+    
     &__line {
-
+        grid-row: line-s/line-e;
+        border-top: 1px solid #ccc;
+        margin-bottom: 39px;
     }
-
+    
     &__back {
-
+        grid-row: buttons-s/buttons-e;
+        grid-column: back-s/back-e;
+    }
+    
+    &__confirm {
+        grid-row: buttons-s/buttons-e;
+        grid-column: confirm-s/confirm-e;
     }
 
-    &__confirm {
-        
+    &__details {
+        grid-row: 1/-1;
+        grid-column: 4/5;
+        justify-self: end;
+        align-self: start;
     }
 }
