@@ -32,7 +32,11 @@ function CartContent({className, products}) {
 }
 
 function CartFooter({className, products}){
-    const price = 7.96;
+    const subtotal = products.reduce((total, cartProduct) => {
+        const { product, quantity } = cartProduct;
+        const { price } = product;
+        return total + price * quantity;
+    }, 0);
     return (
         <div onClick={() => history.push('/order/review')} className={`${className} cart-footer`}>
             <a className='cart-footer__checkout'>
@@ -42,7 +46,7 @@ function CartFooter({className, products}){
                 Subtotal
             </div>
             <div className='cart-footer__price'>
-                ${price}
+                ${subtotal}
             </div>
         </div>
     )
