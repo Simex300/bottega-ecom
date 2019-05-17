@@ -23,14 +23,12 @@
         background-color: #333;
         box-shadow: -3px 20px 20px 0 rgba(0, 0, 0, 0.2);
     }
-
-    transition:  all .3s ease;
 }
 
 .cart-button {
     height: 40px;
     width: 76px;
-
+    
     background-color: #333;
     font-size: 24px;
     color: white;
@@ -41,7 +39,8 @@
     display: grid;
     grid-template-rows: 25px [title-s] 80px [title-e products-s] 1fr [products-e footer-s] 113px [footer-e];
     grid-template-columns: [s] 30px [content-s] 1fr [content-e] 30px [e];
-
+    transition:  all .3s ease;
+    
     &__title {
         grid-row: title-s/title-e;
         grid-column: content-s/content-e;
