@@ -5,11 +5,20 @@
 }
 
 .info-title {
-    &__title {
-        font-size: 16px;
-    }
+    display: grid;
+    grid-template-rows: [s] 1fr [e];
+    grid-template-columns: [s] 1fr [m] 1fr [e];
+    align-items: center;
 
+    &__title {
+        grid-row: s/e;
+        grid-column: s/m;
+        font-size: 14px;
+    }
+    
     &__value {
+        grid-row: s/e;
+        grid-column: m/e;
         color: $light-green;
         font-weight: 600;
         font-size: 18px;
@@ -17,8 +26,24 @@
 }
 
 .info-title-green {
-    &__title {
-        font-weight: 600;
-        color: $light-green;
+    .info-title {
+        &__title {
+            font-weight: 600;
+            color: $light-green;
+        }
+    }
+}
+
+.order-summary {
+    width: 240px;
+    height: 150px;
+    display: grid;
+    grid-template-rows: 30px 24px 24px 46px;
+    grid-row-gap: 5px;
+
+    .info-title {
+        &__value {
+            justify-self: end;
+        }
     }
 }
