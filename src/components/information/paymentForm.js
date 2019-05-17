@@ -3,34 +3,23 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
 import { FormInput, FormButton } from '../formFields';
-import Details from '../common/details';
 
 import history from '../../history';
+import OrderSummary from './orderSummary';
 
 class PaymentForm extends Component {
     render() {
         const { className, handleSubmit } = this.props;
-        const info = [
-            {
-                title: 'At least 6 characters'
-            },
-            {
-                title: 'At least one number'
-            },
-            {
-                title: 'At least one symbol'
-            }
-        ]
         return(
-            <form onSubmit={handleSubmit} className={`${className} signup-form`}>
-                <Field className='signup-form__name' name='name' title='Name' placeholder='Name' type='text' component={FormInput}/>
-                <Field className='signup-form__email' name='email' title='Email' placeholder='Email' type='email' component={FormInput}/>
-                <Field className='signup-form__password' name='password' title='Password' placeholder='Password' type='password' component={FormInput}/>
-                <Field className='signup-form__confirm' name='confirm' title='Confirm Password' placeholder='Confirm Password' type='password' component={FormInput}/>
-                <div className='signup-form__line'></div>
-                <Field className='signup-form__create' onClick={() => history.push('/account')} name='login' title='Create Account' type='submit' component={FormButton}/>
-                <Field className='signup-form__back' onClick={() => history.push('/')} name='back' title='Back' type='button' short={true} component={FormButton}/>
-                <Details className='signup-form__details' title='Password Requirements' infos={info} />
+            <form onSubmit={handleSubmit} className={`${className} payment-form`}>
+                <Field className='payment-form__name' name='name' title='Name on Credit Card' placeholder='Name' type='text' component={FormInput}/>
+                <Field className='payment-form__card' name='card' title='Credit Card Number' placeholder='____-____-____-____' type='text' component={FormInput}/>
+                <Field className='payment-form__expiration' name='expiration' title='Expiration Date' placeholder='MM/YYYY' type='text' component={FormInput}/>
+                <Field className='payment-form__ccv' name='ccv' title='CCV' placeholder='CCV' type='text' component={FormInput}/>
+                <div className='shipping-form__line'></div>
+                <Field className='payment-form__confirm' onClick={() => history.push('/shop')} name='confirm' title='Proceed Payment' type='submit' component={FormButton}/>
+                <Field className='payment-form__back' onClick={() => history.push('/information/shipping')} name='back' title='Back' type='button' short={true} component={FormButton}/>
+                <OrderSummary className='payment-form__details'/>
             </form>
         )
     }

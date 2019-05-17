@@ -1,3 +1,64 @@
 .payment {
+    grid-row: content-s/content-e;
+    grid-column: content-s/content-e;
+
+    &__form {
+        display: grid;
+        grid-template-rows: [name-s] 64px [name-e card-s] 64px [card-e] 35px [expiration-s ccv-s] 64px [expiration-e ccv-e] minmax(20px, 81px) [line-s] 26px [line-e buttons-s] 38px [buttons-e];
+        grid-template-columns: [back-s] 137px [back-e] 40px [confirm-s] 1fr [confirm-e] 1fr;
+        grid-row-gap: 15px;
+    }
+}
+
+.payment-form {
+    & > * {
+        grid-column: 1/-1;
+    }
+
+    &__name {
+        grid-row: name-s/name-e;
+    }
     
+    &__card {
+        grid-row: card-s/card-e;
+    }
+    
+    &__expiration {
+        grid-row: expiration-s/expiration-e;
+        input {
+            width: 200px;
+        }
+    }
+    
+    &__ccv {
+        grid-row: ccv-s/ccv-e;
+        transform: translateX(200px + 26px);
+
+        input {
+            width: 200px;
+        }
+    }
+    
+    &__line {
+        grid-row: line-s/line-e;
+        border-top: 1px solid #ccc;
+        margin-bottom: 39px;
+    }
+    
+    &__back {
+        grid-row: buttons-s/buttons-e;
+        grid-column: back-s/back-e;
+    }
+    
+    &__confirm {
+        grid-row: buttons-s/buttons-e;
+        grid-column: confirm-s/confirm-e;
+    }
+
+    &__details {
+        grid-row: 1/-1;
+        grid-column: 4/5;
+        justify-self: end;
+        align-self: start;
+    }
 }
