@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 import Quantity from '../common/quantity';
 import GreenPriceTag from '../common/greenPriceTag';
 
 class ShopProduct extends Component {
 
     handleAddToCart = () => {
-
+        console.log("Inside!");
+        const { _id, title, description, price, belongsTo } = this.props;
+        this.props.addCartProduct({ _id, title, description, price, belongsTo }, 1);
     }
 
     render() {
@@ -26,7 +31,7 @@ class ShopProduct extends Component {
                     </div>
                     <GreenPriceTag className='shop-product__back__price' title={price}/>
                     <Quantity className="shop-product__back__quantity" quantity={1} />
-                    <div className='shop-product__back__add-to-cart'>
+                    <div onClick={this.handleAddToCart} className='shop-product__back__add-to-cart'>
                         Add to Cart
                     </div>
                 </div>
@@ -34,5 +39,7 @@ class ShopProduct extends Component {
         )
     }
 }
+
+ShopProduct = connect(null, actions)(ShopProduct);
 
 export default ShopProduct;
